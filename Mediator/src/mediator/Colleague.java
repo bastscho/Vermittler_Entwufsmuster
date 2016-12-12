@@ -6,15 +6,26 @@
 package mediator;
 
 /**
- * @date 09.12.2016
+ * The interface Colleague, defining the necessity of a send and receive method.
+ *
+ * @param <T> The type of parameter which ought to be used in the
+ * implementation.
  * @author Jakob Tomasi
  */
-public interface Colleague
-{    
+public interface Colleague<T>
+{
+
     /**
-     * 
-     * @param i 
+     * Demands a method to send an object of the type T to a mediator.
+     *
+     * @param i The object which is sent to the mediator
      */
-    public abstract void send(Incident i);
-    public abstract void receive(Incident i);
+    public abstract void send(T i);
+
+    /**
+     * Demands a method to receive an object of the type T from a mediator.
+     *
+     * @param i The object which is received from the mediator
+     */
+    public abstract void receive(T i);
 }
