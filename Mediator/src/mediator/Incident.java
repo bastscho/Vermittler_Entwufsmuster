@@ -6,7 +6,6 @@ package mediator;
  */
 public class Incident
 {
-
     private final int latitude;
     private final int longitude;
     private String customerInfo;

@@ -11,22 +11,32 @@ import java.util.ArrayList;
 public class Mediator
 {
 
-    ArrayList<Vehicle> carsNearby = new ArrayList<>();
+    ArrayList<Vehicle> carsNearby;
 
     /**
-     * The constructor of the Mediator class
+     * Constructor of the Mediator class
      */
-    public void Mediator()
+    public Mediator()
     {
+        this.carsNearby = new ArrayList<>();
     }
 
     /**
      * Add a vehicle to the mediator object
      * @param v A Vehicle object
      */
-    public void addClient(Vehicle v)
+    public void addColleague(Vehicle v)
     {
         this.carsNearby.add(v);
+    }
+    
+    /**
+     * Removes a vehicle from the mediator
+     * @param v The vehicle to be removed
+     */
+    public void removeColleague(Vehicle v)
+    {
+        this.carsNearby.remove(v);
     }
 
     /**
@@ -44,25 +54,13 @@ public class Mediator
             }
         }
     }
-
-    public static void main(String[] args)
+    
+    /**
+     * Returns the amount of colleagues the mediator has knowledge of
+     * @return The amount of vehicles
+     */
+    public int getVehicleCount()
     {
-        Mediator me = new Mediator();
-
-        Vehicle v1 = new Vehicle(me, "TESLAX_ZE-564-BM");
-        Vehicle v2 = new Vehicle(me, "AUDIA8_IM-666-HS");
-        Vehicle v3 = new Vehicle(me, "FORDFO_SL-123-NA");
-
-        me.addClient(v1);
-        me.addClient(v2);
-        me.addClient(v3);
-
-        Incident i = new Incident(47234541, 10744279, "Oil spilled on driveway.", v1);
-
-        v1.send(i);
-        System.out.println("Vehicle 1:");
-        System.out.println(v2.getObstaclesString());
-        System.out.println("Vehicle 2:");
-        System.out.println(v3.getObstaclesString());
+        return this.carsNearby.size();
     }
 }
