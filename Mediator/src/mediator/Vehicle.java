@@ -74,6 +74,15 @@ public class Vehicle implements Colleague<Incident>
         }
         return obstaclesString;
     }
+    
+    /**
+     * Returns the amount of obstacles encountered or received by the mediator
+     * @return The amount of obstacles encountered or received
+     */
+    public int getObstaclesCount()
+    {
+        return this.obstacles.size();
+    }
 
     /**
      * A helper method to get a formatted String containing information about
