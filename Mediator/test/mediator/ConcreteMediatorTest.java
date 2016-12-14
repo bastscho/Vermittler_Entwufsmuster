@@ -4,30 +4,19 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Test class for Mediator
+ * Test class for ConcreteMediator
  * @author Jakob
  */
-public class MediatorTest
+public class ConcreteMediatorTest
 {
     /**
-     * Test of the Constructor, of class Mediator
-     */
-    @Test
-    public void testConstructor()
-    {
-        System.out.println("Constructur");
-        Mediator instance = new Mediator();
-        assertEquals(instance.getClass(), Mediator.class);
-    }
-
-    /**
-     * Test of addClient method, of class Mediator.
+     * Test of addClient method, of class ConcreteMediator.
      */
     @Test
     public void testAddClient()
     {
         System.out.println("addClient");
-        Mediator instance = new Mediator();
+        ConcreteMediator instance = new ConcreteMediator();
         Vehicle v = new Vehicle(instance, "");
         
         instance.addColleague(v);
@@ -35,13 +24,13 @@ public class MediatorTest
     }
 
     /**
-     * Test of sendMessage method, of class Mediator.
+     * Test of sendMessage method, of class ConcreteMediator.
      */
     @Test
     public void testSendMessage()
     {
         System.out.println("sendMessage");
-        Mediator instance = new Mediator();
+        ConcreteMediator instance = new ConcreteMediator();
         Vehicle sender = new Vehicle(instance, "s");
         Vehicle receiver = new Vehicle(instance, "r");
         Incident i = new Incident(47234541, 10744279, "Detected spilled oil on driveway", sender);

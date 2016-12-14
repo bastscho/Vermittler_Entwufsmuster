@@ -12,7 +12,7 @@ public class Vehicle implements Colleague<Incident>
 {
 
     private ArrayList<Incident> obstacles;
-    private final Mediator mediator;
+    private final ConcreteMediator mediator;
     private final String name;
 
     /**
@@ -22,7 +22,7 @@ public class Vehicle implements Colleague<Incident>
      * vehicles
      * @param name The designation of the vehicle
      */
-    public Vehicle(Mediator med, String name)
+    public Vehicle(ConcreteMediator med, String name)
     {
         this.mediator = med;
         this.name = name;
